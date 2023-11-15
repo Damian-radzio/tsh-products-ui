@@ -1,0 +1,35 @@
+@import './devices';
+
+$max-width: 90%;
+
+@mixin min-width-destkop {
+  width: $desktop-max-width;
+  max-width: $max-width;
+}
+
+@mixin min-width-tablet {
+  width: $tablet-max-width;
+  max-width: $max-width;
+}
+
+@mixin min-width-mobile {
+  width: $mobile-max-width;
+  max-width: $max-width;
+}
+
+@mixin responsive-widths {
+  @media only screen and (min-width: 1441px) {
+    width: $desktop-max-width;
+    max-width: $max-width;
+  }
+
+  @media only screen and (max-width: 1440px) and (min-width: 769px) {
+    width: $tablet-max-width;
+    max-width: $max-width;
+  }
+
+  @media (max-width: 768px) {
+    width: $mobile-max-width;
+    max-width: $max-width;
+  }
+}

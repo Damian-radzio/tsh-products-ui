@@ -1,0 +1,17 @@
+@import 'styles/variables.scss';
+
+.checkboxesWrapper,
+.mobileNavRowWrapper {
+  display: flex;
+}
+.checkboxesWrapper {
+  gap: 32px;
+}
+.mobileNavRowWrapper {
+  align-items: center;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

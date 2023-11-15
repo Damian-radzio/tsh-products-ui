@@ -1,0 +1,24 @@
+@import 'styles/variables.scss';
+
+.checkboxesWrapper,
+.desktopSearchAndCheckboxesWrapper {
+  display: flex;
+}
+.checkboxesWrapper {
+  gap: 32px;
+}
+.desktopSearchAndCheckboxesWrapper {
+  gap: 24px;
+
+  @media (max-width: $desktop-max-width) {
+    flex-direction: column;
+  }
+}
+
+.mobileSearchBar {
+  width: 100%;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+  }
+}
