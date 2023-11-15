@@ -26,8 +26,7 @@ const App = (): JSX.Element => {
             <Routes>
               <Route path="/" element={<Navigate to="/products" />} />
               <Route path="/products" element={<ProductsListView />} />
-              {/* <Route path="/products/:id" element={<EventDetails />} />
-            <Route path="/add-event" element={<AddEventForm />} /> */}
+              {/* <Route path="/products/:id" element={<ProductDetails />} /> */}
             </Routes>
           </div>
         </div>
