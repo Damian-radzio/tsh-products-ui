@@ -17,18 +17,24 @@ button {
 body {
   position: relative;
   min-height: 100vh;
+  font-weight: 600;
 }
 
 .viewWrapper {
   display: flex;
   flex-direction: column;
-  padding-bottom: 80px;
-}
+  background-color: $color-dirty-white;
 
+  min-height: 100vh;
+}
+.navWrapper {
+  background-color: $color-main-white;
+}
 .componentsWrapper {
-  margin-top: 48px;
-  width: 100%;
+  @include responsive-widths;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 56px;
 }

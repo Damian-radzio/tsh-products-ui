@@ -1,5 +1,30 @@
 @import 'styles/variables.scss';
-.productsWrapper {
-  @include responsive-widths;
-  min-height: 300px;
+
+.productsView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  margin-bottom: 48px;
+
+  .productsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px 24px;
+
+    @media (max-width: $desktop-max-width) {
+      justify-content: center;
+    }
+  }
+
+  .pagination {
+    li {
+      width: 40px;
+      text-align: center;
+      button {
+        width: 100%;
+      }
+    }
+  }
 }

@@ -1,27 +1,18 @@
 import { Provider } from 'react-redux';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import WebFont from 'webfontloader';
 
 import Navigation from './components/Navigation';
 import store from './store/index';
 import ProductsListView from 'views/ProductsListView';
-import { useEffect } from 'react';
 
 const App = (): JSX.Element => {
-  useEffect(() => {
-    WebFont.load({
-      google: {
-        families: ['Nunito'],
-      },
-    });
-  }, []);
-
   return (
     <Provider store={store}>
       <Router>
         <div className="viewWrapper">
-          <Navigation />
-
+          <div className="navWrapper">
+            <Navigation />
+          </div>
           <div className="componentsWrapper">
             <Routes>
               <Route path="/" element={<Navigate to="/products" />} />

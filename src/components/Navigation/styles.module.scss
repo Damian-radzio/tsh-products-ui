@@ -1,28 +1,25 @@
 @import 'styles/variables.scss';
 
-$navbar-padding: 48px;
-$navbar-gap: 105px;
-$desktop-gap: 24px;
-$tablet-gap: 48px;
-
 .navbarWrapper {
   @include responsive-widths;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: $navbar-gap;
+  gap: 105px;
   margin: 0 auto;
-  padding: $navbar-padding 0;
+  padding: 48px 0;
 
   @media (max-width: $desktop-max-width) {
     align-items: flex-start;
-    gap: $desktop-gap;
+    gap: 24px;
+    padding: 48px 0 24px 0;
   }
 
   @media (max-width: $tablet-max-width) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: $tablet-gap;
+    gap: 24px;
+    padding: 48px 0 32px 0;
   }
 }
