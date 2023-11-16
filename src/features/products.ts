@@ -3,7 +3,7 @@ import { ProductsStatus } from 'models/Product';
 import { fetchProducts } from 'thunks/events/thunks';
 
 const initialState = {
-  productsList: [{}],
+  productsList: [],
   fetchProductsStatus: '',
 };
 
