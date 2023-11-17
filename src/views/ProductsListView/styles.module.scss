@@ -1,6 +1,8 @@
 @import 'styles/variables.scss';
 
 .productsView {
+  @include responsive-widths;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;

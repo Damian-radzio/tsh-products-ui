@@ -3,9 +3,8 @@ import { FormControlLabel } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import { colorBlue, colorLightGray } from 'styles/colors';
 import styles from './styles.module.scss';
-import { fetchProducts } from 'features/products';
 import { updateFilters } from 'features/productsFilters';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'store';
 type Props = {
   label: string;
@@ -13,7 +12,6 @@ type Props = {
 
 const CheckboxComponent = ({ label }: Props): JSX.Element => {
   const dispatch = useDispatch<AppDispatch>();
-  const { productsFilters } = useSelector((state: any) => state.productsFilters);
   const [checked, setChecked] = useState(false);
 
   const handleChange = (event: any) => {
@@ -22,16 +20,12 @@ const CheckboxComponent = ({ label }: Props): JSX.Element => {
 
   useEffect(() => {
     if (label === 'Promo') {
-      dispatch(updateFilters({ promo: checked }));
+      dispatch(updateFilters({ promo: checked, page: 1 }));
     }
     if (label === 'Active') {
-      dispatch(updateFilters({ active: checked }));
+      dispatch(updateFilters({ active: checked, page: 1 }));
     }
   }, [dispatch, checked, label]);
-
-  useEffect(() => {
-    dispatch(fetchProducts(productsFilters));
-  }, [dispatch, productsFilters]);
 
   return (
     <FormControlLabel

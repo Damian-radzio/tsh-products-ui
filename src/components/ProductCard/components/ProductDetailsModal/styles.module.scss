@@ -1,0 +1,64 @@
+@import 'styles/variables.scss';
+
+.modalWrapper {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: $color-modal-background;
+}
+.productDetailsCard {
+  position: relative;
+  max-width: 100%;
+  width: 600px;
+  min-height: 530px;
+  background-color: $color-main-white;
+  border-radius: 12px;
+  padding-bottom: 24px;
+  max-width: 90%;
+}
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+}
+.image {
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  height: 354px;
+  background-size: 100%;
+  background-position: center center;
+}
+.textWrapper {
+  padding: 0 32px;
+}
+.name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  color: $color-main-text;
+}
+.description {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: $color-dark-gray;
+}
+
+.closeButton {
+  position: absolute !important;
+  top: 10px;
+  right: 10px;
+  min-width: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+}

@@ -6,28 +6,39 @@ import { colorOrange } from 'styles/colors';
 import classnames from 'classnames';
 type Props = {
   product: Product;
+  setIsModalOpen: (value: boolean) => void;
+  setOpenProductId: (value: string) => void;
 };
 
-const ProductCard = ({ product }: Props): JSX.Element => {
+const ProductCard = ({ product, setIsModalOpen, setOpenProductId }: Props): JSX.Element => {
+  const { id, name, description, image, rating, active, promo } = product;
+
+  const handleOpenModal = (id: string) => {
+    setIsModalOpen(true);
+    setOpenProductId(id);
+  };
   return (
     <div className={classnames(styles.productCard)}>
-      <div className={styles.image} style={{ backgroundImage: `url(${product.image})` }} />
-      {product.promo ? <div className={styles.promo}>Promo</div> : null}
+      <div className={styles.image} style={{ backgroundImage: `url(${image})` }} />
+      {promo && <div className={styles.promo}>Promo</div>}
       <div className={styles.infoWrapper}>
         <div className={styles.textTop}>
-          <p className={styles.productName}>{product.name}</p>
-          <p className={styles.productDescription}>{product.description}</p>
+          <p className={styles.productName}>{name}</p>
+          <p className={styles.productDescription}>{description}</p>
         </div>
         <div className={styles.elementsBottom}>
           <Rating
             name="half-rating-read"
-            value={product.rating}
+            value={rating}
             precision={0.5}
             readOnly
             sx={{ color: colorOrange, gap: '8px', fontSize: 16, flexWrap: 'wrap' }}
           />
-          {product.active ? (
-            <Button variant="contained" className={styles.showDetailsButton}>
+          {active ? (
+            <Button
+              variant="contained"
+              className={styles.showDetailsButton}
+              onClick={() => handleOpenModal(id)}>
               Show details
             </Button>
           ) : (

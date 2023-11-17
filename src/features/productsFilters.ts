@@ -12,7 +12,7 @@ const initialState = {
   productsFilters: {
     search: '',
     limit: 0,
-    page: 0,
+    page: 1,
     promo: null,
     active: null,
   },

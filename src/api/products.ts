@@ -31,3 +31,10 @@ export const getProducts = async (data: Params = DEFAULT_PARAMS) => {
     params: { ...params },
   });
 };
+
+
+export const getProductById = async (id: string) => {
+  return await client(`${BASE_URL}/products/${id}`, {
+    method: 'GET',
+  });
+};

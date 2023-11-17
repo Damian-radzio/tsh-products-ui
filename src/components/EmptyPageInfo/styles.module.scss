@@ -1,0 +1,28 @@
+@import 'styles/variables.scss';
+
+.infoWrapper {
+  width: 600px;
+  height: 344px;
+  max-width: 100%;
+  background-color: $color-main-white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+.mainInfo,
+.more-info {
+  font-weight: 600;
+  line-height: 16px;
+}
+.mainInfo {
+  font-size: 18px;
+  color: $color-main-text;
+  margin-bottom: 8px;
+}
+.moreInfo {
+  font-size: 14px;
+  color: $color-dark-gray;
+}
