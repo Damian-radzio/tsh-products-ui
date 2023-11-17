@@ -1,11 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { ProductsStatus } from 'models/Product';
-import { fetchProducts } from 'thunks/events/thunks';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { Params, getProducts } from 'api/products';
 
 const initialState = {
   productsList: [],
   fetchProductsStatus: '',
 };
+
+export const fetchProducts = createAsyncThunk('products/fetchProducts', async (params: Params) => {
+  const { data } = await getProducts(params);
+  return data;
+});
 
 const productsSlice = createSlice({
   name: 'products',

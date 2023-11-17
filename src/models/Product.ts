@@ -1,5 +1,6 @@
 export type ProductsList = {
   productsList: Product[];
+  meta: MetaParams;
 };
 
 export type Product = {
@@ -10,6 +11,14 @@ export type Product = {
   promo: boolean;
   active: boolean;
   id: string;
+};
+
+export type MetaParams = {
+  currentPage: number;
+  itemCount: number;
+  itemsPerPage: number;
+  totalItems: number;
+  totalPages: number;
 };
 
 export enum ProductsStatus {
