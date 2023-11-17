@@ -1,15 +1,18 @@
 @import './variables';
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 html,
 body,
 .MuiTypography-root {
   font-family: 'Nunito', sans-serif !important;
   color: $color-main-text;
 }
+
 button {
   color: $color-main-white;
 }
@@ -24,12 +27,13 @@ body {
   display: flex;
   flex-direction: column;
   background-color: $color-dirty-white;
-
   min-height: 100vh;
 }
+
 .navWrapper {
   background-color: $color-main-white;
 }
+
 .componentsWrapper {
   display: flex;
   justify-content: center;

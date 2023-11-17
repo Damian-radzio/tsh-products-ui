@@ -4,12 +4,13 @@ import { AppDispatch } from 'store';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductCard from 'components/ProductCard';
 import { Product, ProductsStatus } from 'models/Product';
-import { CircularProgress, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import { fetchProductById, fetchProducts } from 'features/products';
 import { updateFilters } from 'features/productsFilters';
 import CustomPagination from 'components/CustomPagination';
 import EmptyPageInfo from 'components/EmptyPageInfo';
 import ProductDetailsModal from 'components/ProductCard/components/ProductDetailsModal';
+import { Loader } from 'components/Loader';
 
 const ProductsListView = (): JSX.Element => {
   const dispatch = useDispatch<AppDispatch>();
@@ -46,11 +47,7 @@ const ProductsListView = (): JSX.Element => {
   return (
     <>
       <div className={styles.productsView}>
-        {productsListStatus === ProductsStatus.pending && (
-          <div className={styles.loader}>
-            <CircularProgress />
-          </div>
-        )}
+        {productsListStatus === ProductsStatus.pending && <Loader />}
         {productsListStatus === ProductsStatus.succeeded && productsList.items?.length > 0 && (
           <>
             <Grid container className={styles.productsWrapper}>

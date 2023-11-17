@@ -12,17 +12,20 @@
   align-items: center;
   gap: 22px;
 }
+
 .mainInfo,
 .more-info {
   font-weight: 600;
   line-height: 16px;
 }
+
 .mainInfo {
   font-size: 18px;
   color: $color-main-text;
   margin-bottom: 8px;
 }
-.moreInfo {
+
+.more-info {
   font-size: 14px;
   color: $color-dark-gray;
 }

@@ -2,10 +2,11 @@ import React from 'react';
 import styles from './styles.module.scss';
 import CloseIcon from '@mui/icons-material/Close';
 import { useSelector } from 'react-redux';
-import { Button, CircularProgress } from '@mui/material';
+import { Button } from '@mui/material';
 import { ProductsStatus } from 'models/Product';
 import EmptyPageInfo from 'components/EmptyPageInfo';
 import { colorMainText } from 'styles/colors';
+import { Loader } from 'components/Loader';
 
 type Props = {
   setIsModalOpen: (value: boolean) => void;
@@ -20,11 +21,7 @@ const ProductDetailsModal = ({ setIsModalOpen }: Props): JSX.Element => {
         <Button onClick={() => setIsModalOpen(false)} className={styles.closeButton}>
           <CloseIcon sx={{ color: colorMainText, fontSize: 26 }} />
         </Button>
-        {productDetailsStatus === ProductsStatus.pending && (
-          <div className={styles.loader}>
-            <CircularProgress />
-          </div>
-        )}
+        {productDetailsStatus === ProductsStatus.pending && <Loader />}
         {productDetailsStatus === ProductsStatus.succeeded && (
           <div className={styles.contentWrapper}>
             <div className={styles.image} style={{ backgroundImage: `url(${image})` }} />

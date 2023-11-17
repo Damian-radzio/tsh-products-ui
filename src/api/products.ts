@@ -1,15 +1,8 @@
+import { ProductsParams } from 'models/Product';
 import { BASE_URL } from './base_url';
 import client from './client';
 
-export type Params = {
-  search: string;
-  limit: number;
-  page: number;
-  promo: boolean | null;
-  active: boolean | null;
-};
-
-export const DEFAULT_PARAMS: Params = {
+export const DEFAULT_PARAMS: ProductsParams = {
   search: '',
   limit: 8,
   page: 1,
@@ -17,7 +10,7 @@ export const DEFAULT_PARAMS: Params = {
   active: null,
 };
 
-export const getProducts = async (data: Params = DEFAULT_PARAMS) => {
+export const getProducts = async (data: ProductsParams = DEFAULT_PARAMS) => {
   const params = {
     search: data.search || DEFAULT_PARAMS.search,
     limit: data.limit || DEFAULT_PARAMS.limit,
@@ -31,7 +24,6 @@ export const getProducts = async (data: Params = DEFAULT_PARAMS) => {
     params: { ...params },
   });
 };
-
 
 export const getProductById = async (id: string) => {
   return await client(`${BASE_URL}/products/${id}`, {

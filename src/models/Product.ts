@@ -26,3 +26,11 @@ export enum ProductsStatus {
   succeeded = 'success',
   failed = 'failed',
 }
+
+export type ProductsParams = {
+  search?: string;
+  limit?: number;
+  page?: number;
+  promo?: boolean | null;
+  active?: boolean | null;
+};
