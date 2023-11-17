@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './styles.module.scss';
+import { Link } from 'react-router-dom';
 const Logo = (): JSX.Element => {
-  return <p className={styles.logo}>join.tsh.io</p>;
+  return (
+    <Link to={'/products'} className={styles.logo}>
+      <p>join.tsh.io</p>
+    </Link>
+  );
 };
 
 export default Logo;

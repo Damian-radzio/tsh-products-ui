@@ -8,17 +8,13 @@ import MobileLayout from './components/MobileLayout';
 const Navigation = (): JSX.Element => {
   const { width } = useWindowDimensions();
 
-  const handleSearch = (query: string) => {
-    console.log(query);
-  };
-
   return width >= 768 ? (
     <div className={styles.navbarWrapper}>
-      <DesktopLayout handleSearch={handleSearch} />
+      <DesktopLayout />
     </div>
   ) : (
     <div className={styles.navbarWrapper}>
-      <MobileLayout handleSearch={handleSearch} />
+      <MobileLayout />
     </div>
   );
 };

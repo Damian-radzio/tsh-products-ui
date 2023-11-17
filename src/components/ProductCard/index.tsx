@@ -21,7 +21,7 @@ const ProductCard = ({ product }: Props): JSX.Element => {
         <div className={styles.elementsBottom}>
           <Rating
             name="half-rating-read"
-            defaultValue={product.rating}
+            value={product.rating}
             precision={0.5}
             readOnly
             sx={{ color: colorOrange, gap: '8px', fontSize: 16, flexWrap: 'wrap' }}

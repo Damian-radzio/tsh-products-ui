@@ -1,0 +1,13 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  min-width: 40px !important;
+  width: 40px;
+  height: 40px;
+}
+.breakPoint {
+  padding: 0 8px;
+  pointer-events: none;
+}
