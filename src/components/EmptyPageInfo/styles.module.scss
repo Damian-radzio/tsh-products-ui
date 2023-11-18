@@ -14,9 +14,10 @@
 }
 
 .mainInfo,
-.more-info {
+.moreInfo {
   font-weight: 600;
   line-height: 16px;
+  text-align: center;
 }
 
 .mainInfo {
@@ -25,7 +26,7 @@
   margin-bottom: 8px;
 }
 
-.more-info {
+.moreInfo {
   font-size: 14px;
   color: $color-dark-gray;
 }

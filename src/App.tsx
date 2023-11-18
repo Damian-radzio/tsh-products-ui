@@ -4,6 +4,7 @@ import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-d
 import Navigation from './components/Navigation';
 import store from './store/index';
 import ProductsListView from 'views/ProductsListView/index';
+import EmptyPageInfo from 'components/EmptyPageInfo';
 
 const App = (): JSX.Element => {
   return (
@@ -17,6 +18,10 @@ const App = (): JSX.Element => {
             <Routes>
               <Route path="/" element={<Navigate to="/products" />} />
               <Route path="/products" element={<ProductsListView />} />
+              <Route
+                path="*"
+                element={<EmptyPageInfo moreInfoText="Sorry! That Page Doesn’t Seem to Exist." />}
+              />
             </Routes>
           </div>
         </div>

@@ -1,13 +1,28 @@
+@import 'styles/variables.scss';
+
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50px;
-  min-width: 40px !important;
-  width: 40px;
-  height: 40px;
+  border-radius: 50px !important;
+  min-width: 30px !important;
+  width: 30px;
+  height: 30px;
+  text-transform: initial !important;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+
+  @media (max-width: $mobile-max-width) {
+    min-width: 20px !important;
+    width: 20px;
+    height: 20px;
+    padding: 0 12px !important;
+  }
 }
 .breakPoint {
-  padding: 0 8px;
+  padding: 0 8px !important;
   pointer-events: none;
+  min-width: auto !important;
 }

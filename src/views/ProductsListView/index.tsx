@@ -26,7 +26,7 @@ const ProductsListView = (): JSX.Element => {
 
   useEffect(() => {
     dispatch(fetchProducts(productsFilters));
-  }, [dispatch, productsFilters, currentPage]);
+  }, [dispatch, productsFilters]);
 
   useEffect(() => {
     if (!openProductId) return;
@@ -60,11 +60,7 @@ const ProductsListView = (): JSX.Element => {
                 />
               ))}
             </Grid>
-            <CustomPagination
-              productsList={productsList}
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-            />
+            <CustomPagination productsList={productsList} setCurrentPage={setCurrentPage} />
           </>
         )}
         {productsListStatus === ProductsStatus.failed ||

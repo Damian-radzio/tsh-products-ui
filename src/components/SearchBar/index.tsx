@@ -1,10 +1,10 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { InputBase, IconButton, Paper } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import styles from './styles.module.scss';
 import { colorMainText } from 'styles/colors';
 import { updateFilters } from 'features/productsFilters';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from 'store';
 
 type Props = {
@@ -12,9 +12,11 @@ type Props = {
 };
 
 const SearchBar = ({ className }: Props) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { productsFilters } = useSelector((state: any) => state.productsFilters);
+
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [inputValue, setInputValue] = useState<string>('');
-  const dispatch = useDispatch<AppDispatch>();
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -25,13 +27,20 @@ const SearchBar = ({ className }: Props) => {
       handleSetSearchQuery();
     }
   };
-  const handleSetSearchQuery = (): void => {
+
+  const handleSetSearchQuery = useCallback((): void => {
     setSearchQuery(inputValue);
-  };
+  }, [inputValue]);
 
   useEffect(() => {
     dispatch(updateFilters({ search: searchQuery, page: 1 }));
   }, [dispatch, searchQuery]);
+
+  useEffect(() => {
+    if (productsFilters.search === '') {
+      setInputValue('');
+    }
+  }, [dispatch, productsFilters.search]);
 
   return (
     <Paper component="form" className={`${styles.root} ${className}`}>

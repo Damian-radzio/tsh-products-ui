@@ -1,5 +1,23 @@
+@import 'styles/variables.scss';
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  @media (max-width: $mobile-max-width) {
+    gap: 0;
+  }
+}
 .paginationWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: initial;
+}
+.firstButton,
+.lastButton {
+  button {
+    text-transform: initial !important;
+    min-width: auto !important;
+  }
 }

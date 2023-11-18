@@ -13,8 +13,8 @@ const initialState = {
     search: '',
     limit: 0,
     page: 1,
-    promo: null,
-    active: null,
+    promo: false,
+    active: false,
   },
 };
 const ProductsFiltersSlice = createSlice({

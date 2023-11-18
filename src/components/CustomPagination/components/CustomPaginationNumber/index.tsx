@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@mui/material';
 import styles from './styles.module.scss';
 type Props = {
-  value: number;
+  value: number | string;
   currentPage: number;
   onClick: () => void;
 };

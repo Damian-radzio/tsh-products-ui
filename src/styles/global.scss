@@ -11,6 +11,7 @@ body,
 .MuiTypography-root {
   font-family: 'Nunito', sans-serif !important;
   color: $color-main-text;
+  overflow-x: hidden;
 }
 
 button {
