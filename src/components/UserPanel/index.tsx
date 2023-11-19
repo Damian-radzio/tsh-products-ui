@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import LoginBtn from './components/LoginBtn';
+import { Link } from 'react-router-dom';
 const UserPanel = (): JSX.Element => {
-  const [isUserLoggedIn] = useState(false);
   return (
-    <>
-      {isUserLoggedIn ? (
-        <p>ikona</p>
-      ) : (
-        <>
-          <LoginBtn />
-        </>
-      )}
-    </>
+    <Link to="/login">
+      <LoginBtn />
+    </Link>
   );
 };
 

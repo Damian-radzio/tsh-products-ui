@@ -43,7 +43,6 @@ const ProductsListView = (): JSX.Element => {
       };
     }
   }, [isModalOpen]);
-
   return (
     <>
       <div className={styles.productsView}>
@@ -60,7 +59,9 @@ const ProductsListView = (): JSX.Element => {
                 />
               ))}
             </Grid>
-            <CustomPagination productsList={productsList} setCurrentPage={setCurrentPage} />
+            {productsList.meta.totalPages > 1 ? (
+              <CustomPagination productsList={productsList} setCurrentPage={setCurrentPage} />
+            ) : null}
           </>
         )}
         {productsListStatus === ProductsStatus.failed ||
