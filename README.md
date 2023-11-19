@@ -7,13 +7,13 @@ This application was built using React and Typescript, with state management han
 
 ## How to Run the Application Locally
 
-1. Make sure you have Node.js version 20 installed. If not, you can download it from [here](https://nodejs.org/en/download/) or use the following command:
+1. Make sure you have Node.js v20 installed. If not, you can download it from [here](https://nodejs.org/en/download/) or use the following command:
     ```bash
     nvm install 20
     ```
 2. Then use this version (node version is declared in the .nvmrc file): 
     ```bash
-    nvm use
+    nvm use 20
     ```
 
 3. Clone the repository:
