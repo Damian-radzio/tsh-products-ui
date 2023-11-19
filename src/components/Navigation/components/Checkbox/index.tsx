@@ -59,7 +59,6 @@ const CheckboxComponent = ({ label }: Props): JSX.Element => {
       control={
         <Checkbox
           onChange={handleChange}
-          defaultChecked={false}
           checked={checked}
           inputProps={{ 'aria-label': 'controlled' }}
           sx={{
