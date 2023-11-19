@@ -11,19 +11,19 @@ This application was built using React and Typescript, with state management han
     ```bash
     nvm install 20
     ```
-2. Then use this version (node version is declared in the .nvmrc file): 
-    ```bash
-    nvm use 20
-    ```
-
-3. Clone the repository:
+2. Clone the repository:
     ```bash
     git clone https://github.com/Damian-radzio/tsh-products-ui.git
     ```
 
-4. Navigate to the project folder:
+3. Navigate to the project folder:
     ```bash
     cd tsh-products-ui
+    ```
+
+4. Then use this version (node version is declared in the .nvmrc file): 
+    ```bash
+    nvm use 20
     ```
 
 5. Install dependencies:
