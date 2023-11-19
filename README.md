@@ -1,71 +1,88 @@
-# Getting Started with Create React App
+# Products List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This application was built using React and Typescript, with state management handled by Redux Toolkit.
 
-In the project directory, you can run:
 
-### `npm start`
+## How to Run the Application Locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Make sure you have Node.js version 20 installed. If not, you can download it from [here](https://nodejs.org/en/download/) or use the following command:
+    ```bash
+    nvm install 20
+    ```
+2. Then use this version (node version is declared in the .nvmrc file): 
+    ```bash
+    nvm use
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Clone the repository:
+    ```bash
+    git clone https://github.com/Damian-radzio/tsh-products-ui.git
+    ```
 
-### `npm test`
+4. Navigate to the project folder:
+    ```bash
+    cd tsh-products-ui
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-### `npm run build`
+7. Start the project:
+    ```bash
+    npm start
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## That's it! The project should now be running at [http://localhost:3000](http://localhost:3000).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## About project features:
 
-### `npm run eject`
+### Navigation:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Logo, search bar, filter buttons, and login button.
+- By default, all filters are disabled, showing all products, both active and inactive, with or without promotions.
+  
+### Search:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The search bar scans all pages to find products containing the entered phrase.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Filter Buttons:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Promo:** Activating the promo button filters all pages for products on promotion.
+  
+- **Active:** Activating the active button filters all pages for active products.
 
-## Learn More
+### Login Button (Work in Progress):
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The button redirects to an empty page at `/login`. It is prepared for ongoing work on the creation of the login page.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Logo:
 
-### Code Splitting
+- Clicking the logo takes us to the /products page and resets all filters (search bar and filter buttons).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Products List:
 
-### Analyzing the Bundle Size
+- Each product has an image, description, and a button for a modal with product details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Product Details Button:
 
-### Making a Progressive Web App
+- Opens a modal window above the products list with detailed product information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Pagination:
 
-### Advanced Configuration
+- Pagination displays all available user-accessible pages with first and last buttons for direct navigation to the beginning or end of the list.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+##  Planned Features
 
-### Deployment
+- Implement a button to navigate to a detailed product subpage with the option to purchase.
+- Create a login view.
+- Implement a password recovery view.
+- Develop the functionality to add a product to favorites or cart.
+- Create a cart view.
+- Introduce a filter for favorite products.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# tsh-products-ui
