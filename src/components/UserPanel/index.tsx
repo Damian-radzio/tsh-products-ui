@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LoginBtn from './components/LoginBtn';
 import { Link } from 'react-router-dom';
 const UserPanel = (): JSX.Element => {
